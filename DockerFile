@@ -1,0 +1,11 @@
+# Use Red Hat UBI base image with Apache HTTPD
+FROM registry.access.redhat.com/ubi10/httpd-24
+
+# Copy application content into Apache’s default directory
+COPY ./index.html /var/www/html/
+
+# Expose HTTP port
+EXPOSE 8080
+
+# Default command
+CMD ["httpd", "-D", "FOREGROUND"]
