@@ -9,3 +9,6 @@ EXPOSE 8080
 
 # Default command
 CMD ["httpd", "-D", "FOREGROUND"]
+
+# remove or disable the SSL config
+RUN rm -f /etc/httpd/conf.d/ssl.conf
